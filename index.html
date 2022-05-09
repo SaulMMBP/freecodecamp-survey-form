@@ -17,19 +17,19 @@
                 <fieldset class="input-text-fieldset">
                     <legend>Información personal</legend>
 
-                    <label for="name">¿Cuál es tu nombre?</label>
+                    <label for="name">Nombre</label>
                     <input id="name" name="name" type="text" pattern="[A-Za-z]*" placeholder="Ej. Juanito Martínez" required />
-                    
-                    <label for="age">¿Cuál es tu edad?</label>
+
+                    <label for="age">Edad</label>
                     <input id="age" name="age" type="text" pattern="\d{1,3}" placeholder="Ej. 34" required />
-                    
-                    <label for="email">¿Cuál es tu correo electrónico?</label>
+
+                    <label for="email">E-mail</label>
                     <input id="email" name="email" type="email" placeholder="Ej. juanito@cafe.com" />
                 </fieldset>
 
                 <fieldset class="select-fieldset">
-                    <legend>¿Cuál es tu ocupación?</legend>
-
+                    <legend>Ocupación</legend>
+                    
                     <select id="ocupation" name="ocupation">
                         <option selected disabled>Elige una opción</option>
                     </select>
@@ -38,39 +38,47 @@
                 <fieldset class="radio-fieldset">
                     <legend>¿Qué Sistema Operativo prefieres?</legend>
 
-                    <input id="Windows" name="OS" type="radio" value="Windows" />
-                    <label for="Windows">Windows</label>
+                    <label for="Windows">
+                        <input id="Windows" name="OS" type="radio" value="Windows" />Windows
+                    </label>
+                    
+                    <label for="iOS">
+                        <input id="iOS" name="OS" type="radio" value="iOS" />iOS
+                    </label>
 
-                    <input id="iOS" name="OS" type="radio" value="iOS" />
-                    <label for="iOS">iOS</label>
-
-                    <input id="Linux" name="OS" type="radio" value="Linux" />
-                    <label for="Linux">Linux</label>
+                    <label for="Linux">
+                        <input id="Linux" name="OS" type="radio" value="Linux" />Linux
+                    </label>
                 </fieldset>
 
                 <fieldset class="check-fieldset">
                     <legend>¿Cuáles lenguajes de programación conoces?</legend>
 
-                    <input id="Java" name="language" type="checkbox" value="Java" />
-                    <label for="Java">Java</label>
+                    <label for="Java">
+                        <input id="Java" name="language" type="checkbox" value="Java" />Java
+                    </label>
 
-                    <input id="C/C++" name="language" type="checkbox" value="C/C++" />
-                    <label for="C/C++">C/C++</label>
+                    <label for="C/C++">
+                        <input id="C/C++" name="language" type="checkbox" value="C/C++" />C/C++
+                    </label>
 
-                    <input id="Python" name="language" type="checkbox" value="Python" />
-                    <label for="Python">Python</label>
+                    <label for="Python">
+                        <input id="Python" name="language" type="checkbox" value="Python" />Python
+                    </label>
 
-                    <input id="Fortran" name="language" type="checkbox" value="Fortran" />
-                    <label for="Fortran">Fortran</label>
+                    <label for="Fortran">
+                        <input id="Fortran" name="language" type="checkbox" value="Fortran" />Fortran
+                    </label>
 
-                    <input id="Ruby" name="language" type="checkbox" value="Ruby" />
-                    <label for="Ruby">Ruby</label>
+                    <label for="Ruby">
+                        <input id="Ruby" name="language" type="checkbox" value="Ruby" />Ruby
+                    </label>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="textarea-fieldset">
                     <legend>¿Cuál ha sido el mayor reto que haz tenido con alguno de los lenguajes anteriores?</legend>
 
-                    <textarea name="experience" placeholder="Cuentanos..." maxlength="500"></textarea>
+                    <textarea name="experience" placeholder="Cuentanos..." maxlength="500" rows="10" ></textarea>
                 </fieldset>
 
                 <button type="submit" value="submit">Enviar</button>
