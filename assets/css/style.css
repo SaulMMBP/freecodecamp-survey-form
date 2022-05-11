@@ -43,9 +43,13 @@ form {
 
 fieldset {
     border: none;
-    margin: 0 1rem 2.3rem;
+    margin: 0 1rem;
     padding: 1rem;
     color: #424363;
+}
+
+hr {
+    margin: 1rem 4rem;
 }
 
 /* Contenido de fieldsets */
@@ -64,23 +68,34 @@ legend {
 }
 
 .input-text-fieldset label {
-    padding-left: 1rem;
+    justify-self: center;
 }
 
 .input-text-fieldset input {
+    padding-left: 0.5rem;
     height: 1.7rem;
     border-radius: 5px;
+    border-width: 1px;
+}
+
+.select-fieldset {
+    display: grid;
+    grid-template-columns: 20% 60%;
+    row-gap: 1rem;
+}
+
+.select-fieldset label {
+    justify-self: center;
 }
 
 .select-fieldset select {
-    margin: 0 1rem;
     height: 1.7rem;
     border-radius: 5px;
 }
 
 .radio-fieldset, 
 .check-fieldset {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -91,6 +106,7 @@ legend {
 
 .textarea-fieldset textarea {
     width: 100%;
+    padding: 0.5rem;
     resize: none;
     border-radius: 5px;
 }
@@ -101,9 +117,38 @@ iframe {
 
 /* buton */
 button {
+    background-color: #e1e1ee;
     align-self: center;
     font-size: 1.1rem;
-    padding: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+/* footer */
+footer {
+    padding: 1rem;
+    font-size: 0.75rem;
+    background-color: #e1e1ee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    font-size: 1.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.socials li {
+    margin: 0 0.5rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #424363;
 }
 
 /* popup */
@@ -118,10 +163,13 @@ button {
     align-items: center;
     justify-content: center;
     visibility: hidden;
+    transition: all 0.2s ease;
+    opacity: 0;
 }
 
 .overlay.active {
     visibility: visible;
+    opacity: 1;
 }
 
 .popup {
@@ -139,7 +187,6 @@ button {
     display: block;
     text-align: right;
     color: black;
-    transition: 0.3s ease all;
 }
 
 .popup .btn-cerrar-popup:hover {
@@ -147,16 +194,10 @@ button {
 }
 
 .popup h2 {
+    color: #161618;
     margin: 1rem;
 }
 
 .popup p {
     margin: 1rem;
-}
-
-/* footer */
-footer {
-    padding: 1rem;
-    font-size: 0.75rem;
-    background-color: #e1e1ee;
 }
