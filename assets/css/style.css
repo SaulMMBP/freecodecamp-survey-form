@@ -38,6 +38,7 @@ form {
     background-color: #e1e1ee;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 fieldset {
@@ -68,11 +69,13 @@ legend {
 
 .input-text-fieldset input {
     height: 1.7rem;
+    border-radius: 5px;
 }
 
 .select-fieldset select {
     margin: 0 1rem;
     height: 1.7rem;
+    border-radius: 5px;
 }
 
 .radio-fieldset, 
@@ -89,6 +92,11 @@ legend {
 .textarea-fieldset textarea {
     width: 100%;
     resize: none;
+    border-radius: 5px;
+}
+
+iframe {
+    display: none;
 }
 
 /* buton */
@@ -96,6 +104,54 @@ button {
     align-self: center;
     font-size: 1.1rem;
     padding: 0.5rem;
+}
+
+/* popup */
+.overlay {
+    background-color: rgb(22, 22, 24, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+.popup {
+    background-color: #cacadd;
+    box-shadow: 0 0 5px 0 rgb(22, 22, 24, 0.5);
+    border-radius: 3px;
+    padding: 2rem;
+    text-align: center;
+    width: 30%;
+}
+
+.popup .btn-cerrar-popup {
+    font-size: 12px;
+    line-height: 12px;
+    display: block;
+    text-align: right;
+    color: black;
+    transition: 0.3s ease all;
+}
+
+.popup .btn-cerrar-popup:hover {
+    color: #424363;
+}
+
+.popup h2 {
+    margin: 1rem;
+}
+
+.popup p {
+    margin: 1rem;
 }
 
 /* footer */
