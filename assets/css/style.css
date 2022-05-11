@@ -14,7 +14,7 @@ html {
 
 body {
     background-color: #424363;
-    padding: 16px 0 0;
+    padding: 16px 0;
 }
 
 header {
@@ -178,7 +178,7 @@ footer {
     border-radius: 3px;
     padding: 2rem;
     text-align: center;
-    width: 30%;
+    width: 40%;
 }
 
 .popup .btn-cerrar-popup {
@@ -186,7 +186,7 @@ footer {
     line-height: 12px;
     display: block;
     text-align: right;
-    color: black;
+    color: #161618;
 }
 
 .popup .btn-cerrar-popup:hover {
@@ -200,4 +200,35 @@ footer {
 
 .popup p {
     margin: 1rem;
+}
+
+.popup .btn-details {
+    display: block;
+    text-align: left;
+}
+
+#btn-details{
+    text-decoration: none;
+    color: #161618;
+}
+
+.fa {
+    transition: all 0.5s ease;
+}
+
+.fa.active {
+    transform: rotate(90deg);
+}
+
+.details {
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-align: left;
+}
+
+.details.active {
+    visibility: visible;
+    height: 100px;
 }
