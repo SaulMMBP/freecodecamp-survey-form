@@ -1,6 +1,5 @@
 function myOnLoad() {
     funs.setOcupaciones();
-
 }
 
 const funs = {
@@ -36,5 +35,35 @@ const funs = {
         formDataObj['language'] = formData.getAll('language');
 
         console.log(formDataObj);
+        return formDataObj;
+    },
+
+    openPopUp: () => {
+        let overlay = document.getElementById('overlay'),
+            popup = document.getElementById('popup'),
+            cerrar = document.getElementById('btn-cerrar-popup');
+        let data = funs.getFormData();
+
+        overlay.classList.add('active');
+        popup.classList.add('active');
+
+        funs.setPopUp(data);
+
+        cerrar.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            popup.classList.remove('active');
+        })
+    },
+
+    setPopUp: (formDataObjt) => {
+        let saludo, mensaje, result;
+        let name = formDataObjt['name'],
+            language = formDataObjt['language'];
+
+        saludo = "Hola " + name;
+        mensaje = (language != []) ? language.join(', ') : "";
+        result = (mensaje != "") ? saludo + "<br><br>" + "Sé buen chico y sigue programando en<br>" + mensaje : saludo;
+
+        document.getElementById('result').innerHTML = result;
     }
 }
