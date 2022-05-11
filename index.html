@@ -1,95 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link href="assets\css\style.css" rel="stylesheet" type="text/css">
-        <title>Survey Form</title>
-    </head>
-    
-    <body onload="myOnLoad()">
-        <header>
-            <h1>Survey Form</h1>
-            <p>Gracias por Contestar</p>
-        </header>
-        
-        <main>
-            <form id="form" enctype="multipart/form-data" onsubmit="funs.getFormData()" target="request">
-                <fieldset class="input-text-fieldset">
-                    <legend>Información personal</legend>
 
-                    <label for="name">Nombre</label>
-                    <input id="name" name="name" type="text" pattern="[A-Za-z]*" placeholder="Ej. Juanito Martínez" required />
+<head>
+    <meta charset="utf-8">
+    <link href="assets\css\style.css" rel="stylesheet" type="text/css">
+    <title>Survey Form</title>
+</head>
 
-                    <label for="age">Edad</label>
-                    <input id="age" name="age" type="text" pattern="\d{1,3}" placeholder="Ej. 34" required />
+<body onload="myOnLoad()">
+    <header>
+        <h1>Survey Form</h1>
+        <p>Gracias por Contestar</p>
+    </header>
 
-                    <label for="email">E-mail</label>
-                    <input id="email" name="email" type="email" placeholder="Ej. juanito@cafe.com" />
-                </fieldset>
+    <main>
+        <form id="form" enctype="multipart/form-data" onsubmit="funs.openPopUp()" target="request">
+            <fieldset class="input-text-fieldset">
+                <legend>Información personal</legend>
 
-                <fieldset class="select-fieldset">
-                    <legend>Ocupación</legend>
-                    
-                    <select id="ocupation" name="ocupation">
-                        <option selected disabled>Elige una opción</option>
-                    </select>
-                </fieldset>
+                <label for="name">Nombre</label>
+                <input id="name" name="name" type="text" pattern="[A-Za-z]*" placeholder="Ej. Juanito Martínez"
+                    required />
 
-                <fieldset class="radio-fieldset">
-                    <legend>¿Qué Sistema Operativo prefieres?</legend>
+                <label for="age">Edad</label>
+                <input id="age" name="age" type="text" pattern="\d{1,3}" placeholder="Ej. 34" required />
 
-                    <label for="Windows">
-                        <input id="Windows" name="OS" type="radio" value="Windows" />Windows
-                    </label>
-                    
-                    <label for="iOS">
-                        <input id="iOS" name="OS" type="radio" value="iOS" />iOS
-                    </label>
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="Ej. juanito@cafe.com" />
+            </fieldset>
 
-                    <label for="Linux">
-                        <input id="Linux" name="OS" type="radio" value="Linux" />Linux
-                    </label>
-                </fieldset>
+            <fieldset class="select-fieldset">
+                <legend>Ocupación</legend>
 
-                <fieldset class="check-fieldset">
-                    <legend>¿Cuáles lenguajes de programación conoces?</legend>
+                <select id="ocupation" name="ocupation">
+                    <option selected disabled>Elige una opción</option>
+                </select>
+            </fieldset>
 
-                    <label for="Java">
-                        <input id="Java" name="language" type="checkbox" value="Java" />Java
-                    </label>
+            <fieldset class="radio-fieldset">
+                <legend>¿Qué Sistema Operativo prefieres?</legend>
 
-                    <label for="C/C++">
-                        <input id="C/C++" name="language" type="checkbox" value="C/C++" />C/C++
-                    </label>
+                <label for="Windows">
+                    <input id="Windows" name="OS" type="radio" value="Windows" />Windows
+                </label>
 
-                    <label for="Python">
-                        <input id="Python" name="language" type="checkbox" value="Python" />Python
-                    </label>
+                <label for="iOS">
+                    <input id="iOS" name="OS" type="radio" value="iOS" />iOS
+                </label>
 
-                    <label for="Fortran">
-                        <input id="Fortran" name="language" type="checkbox" value="Fortran" />Fortran
-                    </label>
+                <label for="Linux">
+                    <input id="Linux" name="OS" type="radio" value="Linux" />Linux
+                </label>
+            </fieldset>
 
-                    <label for="Ruby">
-                        <input id="Ruby" name="language" type="checkbox" value="Ruby" />Ruby
-                    </label>
-                </fieldset>
+            <fieldset class="check-fieldset">
+                <legend>¿Cuáles lenguajes de programación conoces?</legend>
 
-                <fieldset class="textarea-fieldset">
-                    <legend>¿Cuál ha sido el mayor reto que haz tenido con alguno de los lenguajes anteriores?</legend>
+                <label for="Java">
+                    <input id="Java" name="language" type="checkbox" value="Java" />Java
+                </label>
 
-                    <textarea name="experience" placeholder="Cuentanos..." maxlength="500" rows="10" ></textarea>
-                </fieldset>
+                <label for="C/C++">
+                    <input id="C/C++" name="language" type="checkbox" value="C/C++" />C/C++
+                </label>
 
-                <button type="submit" value="submit">Enviar</button>
-            </form>
-            <iframe name="request" style="display: none"></iframe>
-        </main>
+                <label for="Python">
+                    <input id="Python" name="language" type="checkbox" value="Python" />Python
+                </label>
 
-        <footer>
-            <p>By Saul Malagon Martinez</p>
-        </footer>
+                <label for="Fortran">
+                    <input id="Fortran" name="language" type="checkbox" value="Fortran" />Fortran
+                </label>
 
-        <script src="assets\js\script.js"></script>
-    </body>
+                <label for="Ruby">
+                    <input id="Ruby" name="language" type="checkbox" value="Ruby" />Ruby
+                </label>
+            </fieldset>
+
+            <fieldset class="textarea-fieldset">
+                <legend>¿Cuál ha sido el mayor reto que haz tenido con alguno de los lenguajes anteriores?</legend>
+
+                <textarea name="experience" placeholder="Cuentanos..." maxlength="500" rows="10"></textarea>
+            </fieldset>
+
+            <button id="submit" type="submit" value="submit">Enviar</button>
+        </form>
+
+        <iframe name="request"></iframe>
+
+        <div id="overlay" class="overlay">
+            <div id="popup" class="popup">
+                <a id="btn-cerrar-popup" class="btn-cerrar-popup" href="#">cerrar</a>
+                <h2>Holo</h2>
+                <hr>
+                <p id="result"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>By Saul Malagon Martinez</p>
+    </footer>
+
+    <script src="assets\js\script.js"></script>
+</body>
+
 </html>
