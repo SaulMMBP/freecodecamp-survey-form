@@ -2,39 +2,49 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta lang="es" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets\css\style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets\icons\font-awesome-4.7.0\css\font-awesome.min.css">
     <title>Survey Form</title>
 </head>
 
 <body onload="myOnLoad()">
-    <header>
-        <h1>Survey Form</h1>
-        <p>Gracias por Contestar</p>
-    </header>
-
     <main>
-        <form id="form" enctype="multipart/form-data" onsubmit="openPopUp()" target="request">
-            <fieldset class="input-text-fieldset">
+        <div class="title">
+            <h1>Survey Form</h1>
+            <p>Gracias por Contestar</p>
+        </div>
+        <form id="form" onsubmit="openPopUp()" target="request">
+            <fieldset class="personal-info-fieldset">
                 <legend>Información personal</legend>
 
-                <label for="name">Nombre*</label>
-                <input id="name" name="name" type="text" pattern="[A-Za-z]*" placeholder="Ej. Juanito Martínez"
-                    required />
+                <div id="name-div" class="input-label-div">
+                    <label for="name">Nombre:*</label><br>
+                    <input id="name" name="name" type="text" pattern="[A-Za-z]*" required />
+                </div>
 
-                <label for="age">Edad*</label>
-                <input id="age" name="age" type="text" pattern="\d{1,3}" placeholder="Ej. 34" required />
+                <div id="apellidos-div" class="input-label-div">
+                    <label for="apellidos">Apellidos:*</label><br>
+                    <input id="apellidos" name="apellidos" type="text" pattern="[A-Za-z]*" required />
+                </div>
 
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="Ej. juanito@cafe.com" />
-            </fieldset>
+                <div id="age-div" class="input-label-div">
+                    <label for="age">Edad:*</label><br>
+                    <input id="age" name="age" type="text" pattern="\d{1,3}" required />
+                </div>
 
-            <fieldset class="select-fieldset">
-                <label for="ocupation">Ocupación</label>
-                <select id="ocupation" name="ocupation">
-                    <option selected disabled>Elige una opción</option>
-                </select>
+                <div id="ocupation-div" class="select-label-div">
+                    <label for="ocupation">Ocupación:</label><br>
+                    <select id="ocupation" name="ocupation">
+                        <option selected disabled>Elige una opción</option>
+                    </select>
+                </div>
+
+                <div id="email-div" class="input-label-div">
+                    <label for="email">E-mail:</label><br>
+                    <input id="email" name="email" type="email" />
+                </div>
             </fieldset>
 
             <hr>
@@ -84,22 +94,21 @@
             <fieldset class="textarea-fieldset">
                 <legend>¿Cuál ha sido el mayor reto que haz tenido con alguno de los lenguajes anteriores?</legend>
 
-                <textarea name="experience" placeholder="Cuentanos..." maxlength="500" rows="10"></textarea>
+                <textarea name="experience" maxlength="500" rows="10"></textarea>
             </fieldset>
 
-            <button id="submit" type="submit" value="submit">Enviar</button>
+            <button id="btn-submit" type="submit" value="submit">Enviar</button>
         </form>
 
         <iframe name="request"></iframe>
 
         <div id="overlay" class="overlay">
             <div id="popup" class="popup">
-                <a id="btn-cerrar-popup" class="btn-cerrar-popup" href="#"><i class="fa fa-window-close"
-                        aria-hidden="true"></i></a>
-                <h2>Holo</h2>
-                <hr>
-                <p id="result"></p>
-                <a id="btn-details" class="btn-details" href="#"><i id="arrow" class="fa fa-caret-right" aria-hidden="true"></i> Detalles</a>
+                <button class="btn-cerrar-popup" type="button" onclick="closePopUp()"><i class="fa fa-window-close"
+                        aria-hidden="true"></i></button>
+                <h2>Success!!</h2>
+                <button class="btn-details" onclick="openCloseDetails()"><i id="arrow" class="fa fa-caret-right"
+                        aria-hidden="true"></i> Detalles</button>
                 <div id="details" class="details">
                 </div>
             </div>
@@ -111,11 +120,13 @@
         <div class="copy">
             <p><i class="fa fa-copyright" aria-hidden="true"></i> 2022 Saul Malagon Martinez</p>
         </div>
-        
+
         <ul class="socials">
             <li><a href="https://github.com/SaulMMBP"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/saul-malagon-martinez-611524aa/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.freecodecamp.org/fcc0b28b0e6-2f6c-4d15-b774-089d83d0f4fe"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/saul-malagon-martinez-611524aa/"><i class="fa fa-linkedin-square"
+                        aria-hidden="true"></i></a></li>
+            <li><a href="https://www.freecodecamp.org/fcc0b28b0e6-2f6c-4d15-b774-089d83d0f4fe"><i
+                        class="fa fa-free-code-camp" aria-hidden="true"></i></a></li>
         </ul>
     </footer>
 
