@@ -1,10 +1,8 @@
 function myOnLoad() {
-    setOcupaciones();
-    closePopUp();
-    openCloseDetails();
+    setOcupations();
 }
 
-function setOcupaciones() {
+function setOcupations() {
     let ocupations = ["Administrador", "Acariciador de perritus uwu",
         "Ama de Casa", "Científico", "Carpintero", "Docente", "Dentista",
         "Electricista", "Estudiante", "Ganadero", "Historiador", "Joyero",
@@ -28,14 +26,37 @@ function getFormData() {
     let formDataObj = {};
 
     formData.forEach((value, key) => {
-        if (key != 'language') {
+        if (value != "" && key != 'language') {
             formDataObj[key] = value;
         }
     });
 
-    formDataObj['language'] = formData.getAll('language');
-
     return formDataObj;
+}
+
+function setPopUp(formDataObjt) {
+    let str;
+    let language;
+    let lanStr = "";
+
+    if (formDataObjt.hasOwnProperty('language')) {
+        language = formDataObjt['language'];
+        delete formDataObjt['language'];
+        lanStr = "<br>language: " + "[" + language + "]";
+    }
+
+    str = JSON.stringify(formDataObjt).replace(/\{|\}|,|\"|:/g, (match) => {
+        if (match.indexOf('{') != -1 || match.indexOf('}') != -1 || match.indexOf('"') != -1) {
+            return "";
+        } else if (match.indexOf(',') != -1) {
+            return "<br>";
+        } else if (match.indexOf(':') != -1) {
+            return ": ";
+        }
+    });
+
+
+    document.getElementById('details').innerHTML = str + lanStr;
 }
 
 function openPopUp() {
@@ -50,41 +71,23 @@ function openPopUp() {
 }
 
 function closePopUp() {
-    let cerrar = document.getElementById('btn-cerrar-popup');
-    
-    cerrar.addEventListener('click', () => {
-        overlay.classList.remove('active');
-        popup.classList.remove('active');
-    });
-}
+    let overlay = document.getElementById('overlay'),
+        popup = document.getElementById('popup');
 
-function setPopUp(formDataObjt) {
-    let str, saludo, mensaje, result;
-    let name = formDataObjt['name'],
-        language = formDataObjt['language'];
-
-    saludo = "Hola " + name;
-    mensaje = (language != []) ? language.join(', ') : "";
-    result = (mensaje != "") ? saludo + "<br><br>" + "Sé buen chico y sigue programando en<br>" + mensaje : saludo;
-
-    document.getElementById('result').innerHTML = result;
-
-    str = JSON.stringify(formDataObjt).replace(/\{|\}/g, "").replace(/,/g, "<br>").replace(/\"/g, "").replace(/:/g, ": ");
-    document.getElementById('details').innerHTML = str;
+    overlay.classList.remove('active');
+    popup.classList.remove('active');
 }
 
 function openCloseDetails() {
-    let btn = document.getElementById("btn-details");
     let details = document.getElementById("details");
     let arrow = document.getElementById("arrow");
 
-    btn.addEventListener('click', () => {
-        if(!details.classList.contains('active')) {
-            details.classList.add('active');
-            arrow.classList.add('active');
-        } else {
-            details.classList.remove('active');
-            arrow.classList.remove('active');
-        }
-    });
+    if (!details.classList.contains('active')) {
+        details.classList.add('active');
+        arrow.classList.add('active');
+    } else {
+        details.classList.remove('active');
+        arrow.classList.remove('active');
+    }
+
 }
