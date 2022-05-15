@@ -18,7 +18,7 @@ body {
 
 main {
     background-color: rgb(217, 223, 243);
-    width: 50vmax;
+    width: 50%;
     margin: 4rem 1rem;
     padding: 2rem;
     border-radius: 5px;
@@ -235,23 +235,23 @@ footer {
 
 @media (max-width: 1300px) {
     main {
-        width: 65vmax;
+        width: 65%;
     }
 }
 
 @media (max-width: 900px) {
     main {
-        width: 70vmax;
+        width: 70%;
     }
 }
 
 @media (max-width: 400px) {
+    main {
+        width: 95%;
+    }
     footer {
         flex-direction: column;
     }
-}
-
-@media (max-width: 350px) {
     .personal-info-fieldset {
         grid-template-columns: 1fr;
     }
