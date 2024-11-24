@@ -1,136 +1,144 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta lang="en" charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <title>Survey Form</title>
+    </head>
 
-<head>
-    <meta lang="es" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets\css\style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets\icons\font-awesome-4.7.0\css\font-awesome.min.css">
-    <title>Survey Form</title>
-</head>
-
-<body onload="myOnLoad()">
-    <main>
-        <div class="title">
+    <body>
+        <header>
             <h1>Survey Form</h1>
-            <p>Gracias por Contestar</p>
-        </div>
-        <form id="form" onsubmit="openPopUp()" target="request">
-            <fieldset class="personal-info-fieldset">
-                <legend>Información personal</legend>
+            <p>Thanks for take a time to answer</p>
+        </header>
+        <main>
+            <form id="form" onsubmit="return false;" target="request">
+                <fieldset>
+                    <legend>Personal information</legend>
 
-                <div id="name-div" class="input-label-div">
-                    <label for="name">Nombre:*</label><br>
-                    <input id="name" name="name" type="text" pattern="[A-Za-z]*" required />
-                </div>
+                    <label for="name">
+                        Name*
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Enter your name"
+                            required />
+                    </label>
 
-                <div id="apellidos-div" class="input-label-div">
-                    <label for="apellidos">Apellidos:*</label><br>
-                    <input id="apellidos" name="apellidos" type="text" pattern="[A-Za-z]*" required />
-                </div>
+                    <label for="last-name">
+                        Last Name*
+                        <input
+                            id="last-name"
+                            name="last-name"
+                            type="text"
+                            placeholder="Enter your last name"
+                            required />
+                    </label>
 
-                <div id="age-div" class="input-label-div">
-                    <label for="age">Edad:*</label><br>
-                    <input id="age" name="age" type="text" pattern="\d{1,3}" required />
-                </div>
+                    <label for="age">
+                        Age
+                        <input
+                            id="age"
+                            name="age"
+                            type="text"
+                            min="18"
+                            max="120"
+                            placeholder="Enter your age" />
+                    </label>
 
-                <div id="ocupation-div" class="select-label-div">
-                    <label for="ocupation">Ocupación:</label><br>
-                    <select id="ocupation" name="ocupation">
-                        <option selected disabled>Elige una opción</option>
-                    </select>
-                </div>
+                    <label for="email">
+                        Email:
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Enter your email" />
+                    </label>
 
-                <div id="email-div" class="input-label-div">
-                    <label for="email">E-mail:</label><br>
-                    <input id="email" name="email" type="email" />
-                </div>
-            </fieldset>
+                    <label for="mascot">
+                        Mascot:
+                        <select id="mascot" name="mascot">
+                            <option value="" selected>(Choose an option)</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Are you a programmer</legend>
 
-            <hr>
+                    <label for="yes">
+                        <input id="yes" name="is-programmer" type="radio" value="true" checked />
+                        Yes
+                    </label>
 
-            <fieldset class="radio-fieldset">
-                <legend>¿Qué Sistema Operativo prefieres?</legend>
+                    <label for="no">
+                        <input id="no" name="is-programmer" type="radio" value="false" />
+                        No
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>What programming language do you use?</legend>
 
-                <label for="Windows">
-                    <input id="Windows" name="OS" type="radio" value="Windows" />Windows
-                </label>
+                    <label for="java">
+                        <input id="java" name="language" type="checkbox" value="java" />
+                        Java
+                    </label>
 
-                <label for="iOS">
-                    <input id="iOS" name="OS" type="radio" value="iOS" />iOS
-                </label>
+                    <label for="c">
+                        <input id="c" name="language" type="checkbox" value="c" />
+                        C/C++
+                    </label>
 
-                <label for="Linux">
-                    <input id="Linux" name="OS" type="radio" value="Linux" />Linux
-                </label>
-            </fieldset>
+                    <label for="python">
+                        <input id="python" name="language" type="checkbox" value="python" />
+                        Python
+                    </label>
 
-            <fieldset class="check-fieldset">
-                <legend>¿Cuáles lenguajes de programación conoces?</legend>
+                    <label for="fortran">
+                        <input id="fortran" name="language" type="checkbox" value="fortran" />
+                        Fortran
+                    </label>
 
-                <label for="Java">
-                    <input id="Java" name="language" type="checkbox" value="Java" />Java
-                </label>
+                    <label for="Ruby">
+                        <input id="Ruby" name="language" type="checkbox" value="Ruby" />
+                        Ruby
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>What's you opinion about this page?</legend>
 
-                <label for="C/C++">
-                    <input id="C/C++" name="language" type="checkbox" value="C/C++" />C/C++
-                </label>
+                    <textarea
+                        name="opinion"
+                        maxlength="500"
+                        rows="5"
+                        placeholder="Write your comments..."></textarea>
+                </fieldset>
 
-                <label for="Python">
-                    <input id="Python" name="language" type="checkbox" value="Python" />Python
-                </label>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </main>
 
-                <label for="Fortran">
-                    <input id="Fortran" name="language" type="checkbox" value="Fortran" />Fortran
-                </label>
+        <footer>
+            <p>© 2022 Saul Malagon Martinez</p>
 
-                <label for="Ruby">
-                    <input id="Ruby" name="language" type="checkbox" value="Ruby" />Ruby
-                </label>
-            </fieldset>
-
-            <hr>
-
-            <fieldset class="textarea-fieldset">
-                <legend>¿Cuál ha sido el mayor reto que haz tenido con alguno de los lenguajes anteriores?</legend>
-
-                <textarea name="experience" maxlength="500" rows="10"></textarea>
-            </fieldset>
-
-            <button id="btn-submit" type="submit" value="submit">Enviar</button>
-        </form>
-
-        <iframe name="request"></iframe>
-
-        <div id="overlay" class="overlay">
-            <div id="popup" class="popup">
-                <button class="btn-cerrar-popup" type="button" onclick="closePopUp()"><i class="fa fa-window-close"
-                        aria-hidden="true"></i></button>
-                <h2>Success!!</h2>
-                <button class="btn-details" onclick="openCloseDetails()"><i id="arrow" class="fa fa-caret-right"
-                        aria-hidden="true"></i> Detalles</button>
-                <div id="details" class="details">
-                </div>
+            <div>
+                <a href="https://github.com/SaulMMBP">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/saul-malagon-martinez-611524aa/">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://www.freecodecamp.org/fcc0b28b0e6-2f6c-4d15-b774-089d83d0f4fe">
+                    <i class="bi bi-fire"></i>
+                </a>
             </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div class="copy">
-            <p><i class="fa fa-copyright" aria-hidden="true"></i> 2022 Saul Malagon Martinez</p>
-        </div>
-
-        <ul class="socials">
-            <li><a href="https://github.com/SaulMMBP"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/saul-malagon-martinez-611524aa/"><i class="fa fa-linkedin-square"
-                        aria-hidden="true"></i></a></li>
-            <li><a href="https://www.freecodecamp.org/fcc0b28b0e6-2f6c-4d15-b774-089d83d0f4fe"><i
-                        class="fa fa-free-code-camp" aria-hidden="true"></i></a></li>
-        </ul>
-    </footer>
-
-    <script src="assets\js\script.js"></script>
-</body>
-
+        </footer>
+    </body>
 </html>
